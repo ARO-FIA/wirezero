@@ -1,0 +1,54 @@
+{
+  "manifest_version": 2,
+  "name": "WireZero",
+  "version": "1.0.1",
+  "description": "Network-level tracker blocking, CNAME uncloaking, header hardening, and deterministic anti-fingerprinting.",
+  "icons": {
+    "16": "logo16.png",
+    "32": "logo32.png",
+    "48": "logo48.png",
+    "64": "logo64.png",
+    "96": "logo96.png",
+    "128": "logo128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@wirezero.dev",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "permissions": [
+    "<all_urls>",
+    "dns",
+    "storage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "privacy"
+  ],
+  "background": {
+    "scripts": ["trackers.js", "background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "web_accessible_resources": ["warning.html"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "logo16.png",
+      "32": "logo32.png"
+    },
+    "default_title": "WireZero"
+  }
+}

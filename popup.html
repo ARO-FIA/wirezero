@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="top">
+    <span id="domain">Browser page</span>
+    <button id="site-btn">Active</button>
+  </div>
+
+  <div class="metrics">
+    <div class="metric" title="Third-party analytics, pixels, beacons, and CNAME-cloaked trackers blocked">
+      <strong id="trackers-count">0</strong>
+      <span>Trackers blocked</span>
+    </div>
+    <div class="metric" title="Tracking query parameters stripped and redirect wrappers unwrapped">
+      <strong id="params-count">0</strong>
+      <span>Links cleaned</span>
+    </div>
+    <div class="metric" title="Canvas and WebGL hardware fingerprint readbacks masked">
+      <strong id="probes-count">0</strong>
+      <span>Probes masked</span>
+    </div>
+  </div>
+
+  <div class="layers">
+    <label class="layer">
+      <span>Tracker &amp; beacon blocker</span>
+      <input type="checkbox" data-module="trackers" />
+    </label>
+    <label class="layer">
+      <span>DNS CNAME uncloaking</span>
+      <input type="checkbox" data-module="cname" />
+    </label>
+    <label class="layer">
+      <span>Fingerprint masking</span>
+      <input type="checkbox" data-module="fingerprint" />
+    </label>
+    <label class="layer">
+      <span>Tracking param stripper</span>
+      <input type="checkbox" data-module="params" />
+    </label>
+    <label class="layer">
+      <span>Header &amp; referer hardening</span>
+      <input type="checkbox" data-module="headers" />
+    </label>
+    <label class="layer">
+      <span>WebRTC IP leak guard</span>
+      <input type="checkbox" data-module="webrtc" />
+    </label>
+    <label class="layer">
+      <span>Lookalike domain guard</span>
+      <input type="checkbox" data-module="phishing" />
+    </label>
+    <label class="layer">
+      <span>Spoof timezone to UTC</span>
+      <input type="checkbox" data-module="timezone" />
+    </label>
+  </div>
+
+  <div class="foot">
+    <span>Total neutralized since install</span>
+    <strong id="all-time-total">0</strong>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
