@@ -2,7 +2,9 @@
 
 ![WireZero banner](forreadme/WireZero-banner.png)
 
-WireZero is a completely free Firefox add-on made for privacy.
+
+
+WireZero is a free Firefox add-on that protects your browsing privacy by neutralizing tracking and fingerprinting techniques in real time. It blocks trackers and beacons, uncloaks DNS CNAME records, strips tracking parameters from URLs, and hardens HTTP headers and referers. It also masks browser fingerprints, prevents WebRTC IP leaks, guards against lookalike domains, and includes an optional toggle to spoof your timezone to UTC. All protections run locally in your browser with per-site toggles and live activity counters.
 
 ## Resources
 
